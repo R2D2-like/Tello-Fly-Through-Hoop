@@ -1,8 +1,12 @@
+
+
+
+
 # Tello-Fly-Through-Hoop
 Flying through hoops with Tello drone.
 
 ## Demo Video
-[![demo](demo.mp4)]
+https://github.com/R2D2-like/Tello-Fly-Through-Hoop/assets/103891981/decda4b2-b5eb-4ad1-9488-0399cddd042b
 
 ## Environment
 - Ubuntu 20.04 (using docker)
