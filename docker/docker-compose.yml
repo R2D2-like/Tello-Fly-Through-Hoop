@@ -1,0 +1,23 @@
+version: "2.4"
+
+################################################################################
+
+services:
+  ap: # image name : PROJECT_frustum-convnet
+    container_name: ap # container name: frustum-convnet
+    privileged: true
+    environment:
+      # Display X Server GUI.
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    shm_size: '8gb' # Docker イメージ構築時に割り当てる共有メモリの容量
+    volumes:
+      # Mount the project directory.
+      - ../:/root/advanced_programming
+      # Grant display access to X Server.
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
+    command: tail -f /dev/null # コンテナ起動時に実行するコマンド
