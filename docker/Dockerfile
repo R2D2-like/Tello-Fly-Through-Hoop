@@ -15,15 +15,11 @@ RUN apt-get update && \
         cmake 
 
 
-COPY ./. /root/advanced_programming/
-RUN chmod -R +x /root/advanced_programming/*
+COPY ./. /root/Tello-Fly-Through-Hoop/
+RUN chmod -R +x /root/Tello-Fly-Through-Hoop/*
 
 # # Force color prompt in terminal.
 RUN sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/' /root/.bashrc
-
-
-# CUDA 11.7
-# RUN pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
 
 RUN apt-get update -y && apt-get install -y libswscale-dev libavcodec-dev libavutil-dev
 
@@ -62,10 +58,6 @@ RUN apt-get update -y && apt-get install -y iputils-ping net-tools
 RUN pip3 install tello-python
 RUN pip install protobuf==3.20.*
 
-# # sinbolic link
-# WORKDIR /the/workdir/path
-# RUN ln -s /root/external/h264decoder/build/h264decoder.cpython-38-x86_64-linux-gnu.so /root/advanced_programming/scripts/
-
 # tkinter
 RUN apt-get update -y && apt-get install -y python3-tk
 
@@ -82,13 +74,10 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*  
 
-# bash-completionをコンテナ起動時に自動でソースするためのスクリプトを追加
+# Add a script to source bash-completion
 RUN echo 'if [ -f /etc/bash_completion ]; then' >> /etc/bash.bashrc && \
     echo '  . /etc/bash_completion' >> /etc/bash.bashrc && \
     echo 'fi' >> /etc/bash.bashrc
-
-# RUN apt-get clean && \
-#     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
 

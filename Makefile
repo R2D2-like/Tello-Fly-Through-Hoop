@@ -1,9 +1,9 @@
 LOCAL_BASE_IMAGE:=ubuntu:20.04
 DOCKERFILE_DIRECTORY := ./docker
 DOCKERCOMPOSE_FILE := docker-compose.yml
-DOCKER_IMAGE_NAME:=ap
-CONTAINER_NAME:=ap
-PROJECT:=det #現在いるディレクトリがデフォルト
+DOCKER_IMAGE_NAME:=tello-hoop
+CONTAINER_NAME:=tello-hoop
+PROJECT:=det 
 
 
 .PHONY: build_docker
