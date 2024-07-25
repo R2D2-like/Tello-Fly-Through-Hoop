@@ -6,8 +6,10 @@
 
 
 
+
 # Tello-Fly-Through-Hoop
 Flying through hoops with Tello drone.
+![SystemOverview](https://github.com/user-attachments/assets/e0f61b6e-52cc-4be5-9049-27d4a1b87a6d)
 
 ## Demo Video
 https://github.com/R2D2-like/Tello-Fly-Through-Hoop/assets/103891981/decf273a-676d-4ef3-89c5-ed6a8a78e9d0
